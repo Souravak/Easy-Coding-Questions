@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,k,s,buydays,totalchocotosurvive,totalbuydays,choco=0;
+        cin>>n>>k>>s;
+        totalchocotosurvive=s*k;
+        totalbuydays=s-s/7;
+        buydays=0;
+        int result;
+        int totalsurvivedays=s;
+        while(choco<totalchocotosurvive)
+        {
+            choco=choco+n;
+            buydays++;
+            result=buydays;
+            if(buydays>totalbuydays)
+            {
+                result=-1;
+                break;
+            }
+        }
+        if(k==0)result=0;
+        cout<<result<<endl;
+    }
+    return 0;
+}
